@@ -86,13 +86,18 @@ footer {
   padding: 1em 2em;
   border-radius: 100px;
   display: inline-block;
-  margin-top: 1em;
-  transition: opacity 0.2ms;
+  /* adding a transparent border to the button and then adding a 
+  non-transparent border on the hover/focus states allows for no
+  visible movement shift to occur when hovered/focused */
+  border: 1px solid transparent;
+  transition: background-color, color, border 0.2ms;
 }
 
 .card_button:hover,
 .card_button:focus {
-  opacity: 90%;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
 }
 
 .card_link--sedan {
