@@ -17,6 +17,10 @@ This is a solution to the [3-column preview card component challenge on Frontend
 - [Acknowledgments](#acknowledgments)
 
 ## Overview
+Started on 7/14
+Mobile design finished on 7/16
+Desktop design finished on 7/21
+Finished on 7/21
 
 ### The challenge
 
