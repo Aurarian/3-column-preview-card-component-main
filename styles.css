@@ -161,9 +161,9 @@ footer {
   }
 
   .card_content {
-    /*flex: 1 is equal to flex: 1 1 0 where grow and shrink are set to 1 and basis is set to 0( */
-    /* so that paragraphs don't cause misalignment shifts, allows card-content to grow into the height */
-    /* margin-bottom: auto would also work here. */
+    /*flex: 1 is equal to flex: 1 1 0 where grow and shrink are set to 1 and basis is set to 0
+     Paragraphs won't cause misalignment shifts between cards by allowing card-content (paragraphs)
+     to grow evenly.  A margin-bottom: auto would also work here. */
     flex: 1;
   }
 }
@@ -176,6 +176,6 @@ footer {
   .sedan_card,
   .suv_card,
   .luxury_card {
-    padding: 4em 2em;
+    padding: 4em 2.75em;
   }
 }
