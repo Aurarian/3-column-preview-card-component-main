@@ -27,15 +27,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Mobile](images/finished_mobile.png)
+![Desktop](images/finished_desktop.png)
 
 ### Links
 
@@ -47,56 +40,78 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
+- Learned how to vertically align using min-height: 100vh and flexbox.
+- Learned how to adjust misaligned content due to height issues by nesting flex containers and using flex property
+- Learned a way to get rid of movement by buttons during hover by adding a transparent border of 1px in regular state that would shift to non-transparent border when hovered/focused on
 
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sedan_card,
+.suv_card,
+.luxury_card {
+    padding: 2em 1.5em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    /* packs all the items flush to left, prevents buttons from stretching all the way*/
+    align-items: flex-start;
+}
+
+  .card_content {
+    /*flex: 1 is equal to flex: 1 1 0 where grow and shrink are set to 1 and basis is set to 0
+     Paragraphs won't cause misalignment shifts between cards by allowing card-content (paragraphs)
+     to grow evenly.  A margin-bottom: auto would also work here. */
+    flex: 1;
+  }
+}
+.card_button {
+  background-color: white;
+  padding: 1em 2em;
+  border-radius: 100px;
+  display: inline-block;
+  /* adding a transparent border to the button and then adding a
+  non-transparent border on the hover/focus states allows for no
+  visible movement shift to occur when hovered/focused */
+  border: 1px solid transparent;
+  transition: background-color, color, border 0.2ms;
+}
+
+.card_button:hover,
+.card_button:focus {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
 }
 ```
 
-```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Skills I would like to continue developing:
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+- Continue using flexbox to get better at manipulating and identifying issues caused when using it
+- General debugging
+- Using more varied CSS properties
+- Implementing grid instead of Flexbox
+- Using markdown
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+Thanks to [Kevin Powell discord community](https://discord.gg/KYDcWvPv) for helping me get past roadblocks.
+This [stackoverflow thread](https://stackoverflow.com/questions/37386244/what-does-flex-1-mean) on flex: 1 was somewhat helpful.
 
 ## Author
 
 - Frontend Mentor - [@aurarian](https://www.frontendmentor.io/profile/Aurarian)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
